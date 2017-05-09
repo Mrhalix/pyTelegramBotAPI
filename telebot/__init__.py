@@ -408,6 +408,16 @@ class TeleBot:
         return types.Message.de_json(
             apihelper.forward_message(self.token, chat_id, from_chat_id, message_id, disable_notification))
 
+    def delete_message(self, chat_id, message_id):
+        """
+        Use this method to delete messages of any kind.
+        :param chat_id: which chat to delete
+        :param message_id: message id
+        :return: API reply.
+        """
+        return types.Message.de_json(
+            apihelper.delete_message(self.token, chat_id, message_id))
+
     def send_photo(self, chat_id, photo, caption=None, reply_to_message_id=None, reply_markup=None,
                    disable_notification=None):
         """
