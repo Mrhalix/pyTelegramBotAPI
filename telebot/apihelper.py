@@ -210,6 +210,11 @@ def forward_message(token, chat_id, from_chat_id, message_id, disable_notificati
         payload['disable_notification'] = disable_notification
     return _make_request(token, method_url, params=payload)
 
+def delete_message(token, chat_id, message_id):
+    method_url = r'deleteMessage'
+    payload = {'chat_id': chat_id, 'message_id': message_id}
+    return _make_request(token, method_url, params=payload)
+
 
 def send_photo(token, chat_id, photo, caption=None, reply_to_message_id=None, reply_markup=None,
                disable_notification=None):
