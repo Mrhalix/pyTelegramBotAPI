@@ -415,7 +415,7 @@ class TeleBot:
         :param message_id: message id
         :return: API reply.
         """
-        return apihelper.delete_message(self.token, chat_id, message_id))
+        return apihelper.delete_message(self.token, chat_id, message_id)
 
     def send_photo(self, chat_id, photo, caption=None, reply_to_message_id=None, reply_markup=None,
                    disable_notification=None):
